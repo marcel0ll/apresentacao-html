@@ -6,7 +6,7 @@
 [Esse repositório](https://github.com/marcel0ll/apresentacao-html) contém o
 código de um [editor em tempo
 real](https://marcel0ll.github.io/apresentacao-html) para que você possa
-acompanhar ver alguns exemploes ou experimentar por conta própria. Lembre que
+acompanhar ver alguns exemplos ou experimentar por conta própria. Lembre que
 aprender é um processo ativo e não passivo!
 
 Hoje em dia é fácil nos perdermos na pletora de bibliotecas para javascript,
@@ -49,19 +49,19 @@ de um gato.
 
 ## Como o navegador interage com tudo isso?
 
-Um navegador é basicamente um cliente de HTTP que requisita arquivos atravéz da
+Um navegador é basicamente um cliente de HTTP que requisita arquivos através da
 internet. Ele busca um arquivo de um servidor HTTP.
 
 > Nota: Uma página na internet é um arquivo
 
 Então quando você abre o google.com, o navegador requisita ao servidor que está
-responsável por esse domínio (google.com) o endereço "/" e o servidor de
+responsável por esse domínio (google.com) o endereço "/" e o servidor te
 responde com um arquivo HTML que seu navegador irá imprimir na tela!
 
 > Nota: Clica com o botão direito no seu navegador e olhe o código fonte da
 > página, o que você irá ver é um grande arquivo HTML
 
-> Nota: Aglumas partes do seu site são impressas na verdade pelo seu sistema
+> Nota: Algumas partes do seu site são impressas na verdade pelo seu sistema
 > operacional (SO) e não pelo navegador. Um exemplo disso são menus de listagem
 > (`<select>`) que no seu computador irão aparecer de um jeito e em celulares
 > aparecem de um jeito completamente diferente.
@@ -77,11 +77,11 @@ faz é escrever marcação que aponta para outro arquivo (uma imagem) e seu
 navegador fará uma segunda requisição por trás das cortinas, pegará a resposta e
 irá imprimir a imagem na tela.
 
-Note que por mais que é muito comum navegadores encaixarem o arquivo de imagem
-dentro da mesma visão da página, nem todo navegador é assim ou podem ser
-configurados de forma diferente. Isso é o caso em navegadores como o
-[Lynx](https://lynx.browser.org/), um navegador de terminal que até onde seu só
-mostra textos.
+Note que por mais que seja muito comum navegadores encaixarem o arquivo de
+imagem dentro da mesma visão da página, nem todo navegador é assim ou pode ser
+configurado de forma diferente. Isso é o caso em navegadores como o
+[Lynx](https://lynx.browser.org/), um navegador de terminal, que até onde sei,
+só mostra textos.
 
 Algumas pessoas podem configurar o navegador para não carregar imagens para
 testar acessibilidade, simular um navegador textual ou eles podem simplesmente
@@ -93,7 +93,7 @@ HTML é escrito usando tags do tipo `<tag></tag>`, cada tag tem o seu propósito
 adicionar conteúdo dentro do documento, adicionar informação sobre o documento
 ou adicionar estrutura semantica ao documento.
 
-Dentro de cada tag você pode declarar multiplos atributos using a sintaxe
+Dentro de cada tag você pode declarar multiplos atributos usando a sintaxe
 `chave="valor"` ou só `chave`, como por exemplo: `<div class="button" disabled>
 Novo artigo </div>`.
 
@@ -107,9 +107,8 @@ Magazine](https://www.smashingmagazine.com/2015/05/desktop-wallpaper-calendars-j
 
 ![Tabela periódica HTML](./html-periodic-table.jpg)
 
-Esse eram todas as tags que existiam quando a table foi feita em 2015, hoje pode
-estar um pouco diferente.
-
+Essas eram todas as tags que existiam quando a table foi feita em 2015, hoje
+pode estar um pouco diferente.
 
 Eu criei uma série de exemplos de HTML que podem ser encontrados [nesse
 editor](https://marcel0ll.github.io/apresentacao-html) 
