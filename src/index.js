@@ -20,7 +20,7 @@ window.onload = () => {
   const $content = document.querySelector('#content');
   const $main = document.querySelector('main');
   let isOnVim = false;
-  let layout = LAYOUTS.STACK;
+  let layout = LAYOUTS.VERTICAL;
   let isOnEditor = true;
 
   let buffers = [
