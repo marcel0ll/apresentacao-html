@@ -30,14 +30,16 @@ window.onload = () => {
   const $main = document.querySelector('main');
   const $btEditor = document.querySelector('#button-editor');
   const $btContent = document.querySelector('#button-content');
+  const $selectBuffer = document.querySelector("#select-buffer");
   let isOnVim = false;
   let layout = LAYOUTS.VERTICAL;
   let isOnEditor = true;
+  let safeToStore = true;
 
   let buffers = [
     {
       title: 'Vazio',
-      code: ``,
+      code: localStorage.getItem('editor') || "",
     },
     structureEx,
     textEx,
@@ -48,15 +50,17 @@ window.onload = () => {
     semanticEx,
     styleEx,
   ];
-  let currentBuffer = 0;
+  let currentBuffer = localStorage.getItem('bufferId') || 0;
 
-  document.querySelector('#select-buffer').innerHTML = buffers
+  $selectBuffer.innerHTML = buffers
     .map(
       (buffer, i) => `
     <option value="${i}">${buffer.title}</option>
   `,
     )
     .join('');
+
+  $selectBuffer.value = currentBuffer;
 
   function setIsOnEditor(value) {
     isOnEditor = typeof value !== 'undefined' ? value : !isOnEditor;
@@ -79,10 +83,14 @@ window.onload = () => {
   }
 
   function changeBuffer(newBuffer) {
+    safeToStore = false;
     buffers[currentBuffer].code = editor.getSession().getValue();
     currentBuffer = newBuffer;
     $content.innerHTML = buffers[currentBuffer].code;
     editor.getSession().setValue(buffers[currentBuffer].code);
+
+    localStorage.setItem('bufferId', currentBuffer);
+    safeToStore = true;
   }
 
   function updateLayout(newLayout) {
@@ -136,7 +144,11 @@ window.onload = () => {
   editor.getSession().setUseWorker(false);
 
   editor.getSession().on('change', function () {
-    buffers[currentBuffer].code = editor.getSession().getValue();
+    let text = editor.getSession().getValue();
+    if (safeToStore && currentBuffer == 0) {
+      localStorage.setItem("editor", text);
+    }
+    buffers[currentBuffer].code = text;
     $content.innerHTML = buffers[currentBuffer].code;
   });
 
