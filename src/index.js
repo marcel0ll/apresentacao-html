@@ -141,4 +141,6 @@ window.onload = () => {
   document.querySelector('#button-layout').onclick = () => updateLayout();
   document.querySelector('#select-buffer').onchange = e =>
     changeBuffer(e.target.value);
+
+  updateLayout(layout);
 };
