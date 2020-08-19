@@ -63,7 +63,7 @@ responde com um arquivo HTML que seu navegador irá imprimir na tela!
 
 > Nota: Aglumas partes do seu site são impressas na verdade pelo seu sistema
 > operacional (SO) e não pelo navegador. Um exemplo disso são menus de listagem
-> (<select>) que no seu computador irão aparecer de um jeito e em celulares
+> (`<select>`) que no seu computador irão aparecer de um jeito e em celulares
 > aparecem de um jeito completamente diferente.
 
 ## O que posso escrever com HTML?
